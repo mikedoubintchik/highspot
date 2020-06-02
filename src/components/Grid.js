@@ -15,9 +15,14 @@ const Grid = () => {
   const { store, dispatch } = useContext(Context);
   const [loader, setLoader] = useState(false);
 
-  // render cards
   const renderCards = (cards) => {
-    if (cards.length === 0) return <h1>No cards were found</h1>;
+    // if no cards or no filtered cards, return no cards found
+    if (
+      cards.length === 0 ||
+      (store.filteredCards.length === 0 && store.filter)
+    )
+      return <h1>No cards were found</h1>;
+    // else return mapped cards
     else
       return cards.map((card, index) => <SingleCard card={card} key={index} />);
   };
@@ -34,7 +39,7 @@ const Grid = () => {
       try {
         let { data } = await axios.get(process.env.REACT_APP_API_URL, {
           params: {
-            pageSize: 4,
+            pageSize: 20,
             page: store.page,
           },
         });
@@ -56,16 +61,13 @@ const Grid = () => {
 
   return (
     <>
-      {((store.cards.length > 0 &&
-        store.filteredCards.length === 0 &&
-        !store.filter) ||
-        (store.filter && store.filteredCards.length > 0)) && (
+      {
         <div className="d-flex justify-content-center justify-content-sm-between flex-wrap">
           {renderCards(
             store.filteredCards.length > 0 ? store.filteredCards : store.cards
           )}
         </div>
-      )}
+      }
 
       {loader && (
         <Loader

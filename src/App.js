@@ -2,8 +2,7 @@ import { default as React, useReducer } from "react";
 import { Container } from "reactstrap";
 import Filter from "./components/Filter";
 import Grid from "./components/Grid";
-// global store
-import { Context, initialState, reducer } from "./store";
+import { Context, initialState, reducer } from "./store"; // global store
 
 const App = () => {
   const [store, dispatch] = useReducer(reducer, initialState);
