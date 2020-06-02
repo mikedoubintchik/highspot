@@ -3,16 +3,8 @@ import React from "react";
 export const initialState = {
   cards: [],
   page: 1,
-  filter: false,
+  filter: "",
   filteredCards: [],
-};
-
-const filterCards = (cards, filter) => {
-  if (filter) {
-    return cards.filter((card, index) =>
-      card.name.toLowerCase().includes(filter.toLowerCase())
-    );
-  } else return [];
 };
 
 export const reducer = (state, action) => {
@@ -22,18 +14,22 @@ export const reducer = (state, action) => {
         ...state,
         cards: [],
         page: 1,
-        filter: false,
+        filter: "",
         filteredCards: [],
       };
     case "updateCards":
       return { ...state, cards: [...state.cards, ...action.cards] };
     case "nextPage":
       return { ...state, page: state.page + 1 };
-    case "filterCards":
+    case "updateFilter":
       return {
         ...state,
         filter: action.filter,
-        filteredCards: filterCards(state.cards, action.filter),
+      };
+    case "filterCards":
+      return {
+        ...state,
+        filteredCards: action.filteredCards,
       };
     default:
       return state;
