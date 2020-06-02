@@ -33,40 +33,40 @@ yarn build
 
 ### Code Quality & Standardization
 
-- I like to explicit as possible about required versions and enforce them when possible. Node version 12.18.0 (LTS support) is enforced using .npmrc and engines in package.json
+- I like to be as explicit as possible about required versions and enforce them when possible. Node version 12.18.0 (LTS support) is enforced using .npmrc and engines in package.json
 - I like to enforce code quality so I implemented Husky pre-commit hooks that run tests and prettier on commit and enforce eslint rules
 - Any sort of setup requirements are automated as much as possible, so for example I run a post install script that copies the `.env.example` file to `.env`
 
 ### State Management
 
-- I went for React Context for simplicity
-- I kept most state that was shared among components in global state
+- I went with React Context using useDispatch hook for simplicity
+- I kept most state that was shared among components in global state and in general tried to minimize reliance on local state
 
 ### Design
 
-- I wanted a good looking design with minimal customization. I chose [Bootstrap]() and [Reactstrap]() because I'm quite familiar with them and they aren't heavy when you pull in only the modules you need. I could have just as easily chosen another framework such as Material. In a team setting, this decision would have been made as a team taking into consideration levels of upskilling needed/desired, how closely the UI framework matches the designs and needs, whether the framework meets performance needs, etc.
+- I wanted a good looking design with minimal customization. I chose Bootstrap and [Reactstrap](https://reactstrap.github.io/) because I'm quite familiar with them and they aren't heavy on the codebase when you pull in only the modules you need. I could have just as easily chosen another framework such as Material. In a team setting, this decision would have been made as a team, taking into consideration levels of upskilling needed/desired, how closely the UI framework matches the designs, whether the framework meets performance needs, etc.
 
 ### Environment Variables
 
 - I saved various information to ENV variables so they could be kept private from the repo, which is especially useful for API keys (none needed in this project)
-- Also this would make the various variables changed easily depending on the environment, ie. different API_URL depending on dev vs staging vs prod environments
+- Also this would make the various variables changed easily depending on the deployment environment, ie. different API_URL depending on dev vs staging vs prod environments
 
 ### Abstraction
 
-- I attempted to show how I would abstract useful functionality that can be reused throughout the app (components, hooks)
+- I attempted to show how I would abstract useful functionality that can be reused throughout the app (see components / hooks)
 - I created a custom hook for infinite scroll functionality that can be reused throughout the app
 
 ### New Techniques
 
-- I used the [HTML Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to implement infinite scrolling. I've done most of the things in this challenge before, so I want to try something new to learn and upskill myself. At the same time, this API is [supported by most modern browsers](https://caniuse.com/#feat=intersectionobserver)
+- I used the [HTML Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) to implement infinite scrolling. I've done most of the things in this challenge before, so I want to try something new to learn and upskill myself. At the same time, this API is [supported by most modern browsers](https://caniuse.com/#feat=intersectionobserver). I always like to learn and try something new on a project if it doesn't have any negative impact.
 
 ### Testing
 
-- I wrote a couple of integration and unit tests, but definitely not near anywhere of production level, due to time constraints. If I was releasing this to production, I would attempt to get close to 100% test coverage and implement regression tests
+- I wrote a couple of integration and unit tests, but definitely nowhere near production level, due to time constraints. If I was releasing this to production, I would attempt to get close to 100% test coverage and implement regression tests
 
 ### Deployment
 
-- Deployed to Firebase so it would be easy for you guys to view the app. However, instructions for local setup are below.
+- Deployed to Firebase so it would be easy for you guys to view the app. However, instructions for local setup are above.
 
 ### If I had more time
 
