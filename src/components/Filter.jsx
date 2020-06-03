@@ -1,27 +1,28 @@
-import React, { useContext } from "react";
-import { FormGroup, Input } from "reactstrap";
-import { Context } from "../store";
+import React, { useContext } from 'react';
+import { FormGroup, Input } from 'reactstrap';
+import { Context } from '../store';
 
 const Filter = () => {
   const { store, dispatch } = useContext(Context);
 
   const filterCards = (cards, filter) => {
     if (filter) {
-      return cards.filter((card, index) =>
+      return cards.filter((card) =>
         // TODO: build a more robust search/filter
-        card.name.toLowerCase().includes(filter.toLowerCase())
+        card.name.toLowerCase().includes(filter.toLowerCase()),
       );
-    } else return [];
+    }
+    return [];
   };
 
   const handleChange = (e) => {
     const filter = e.target.value;
     const filteredCards = filterCards(store.cards, filter);
 
-    dispatch({ type: "updateFilter", filter });
+    dispatch({ type: 'updateFilter', filter });
 
     dispatch({
-      type: "filterCards",
+      type: 'filterCards',
       filteredCards,
     });
   };

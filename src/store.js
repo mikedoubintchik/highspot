@@ -1,32 +1,32 @@
-import React from "react";
+import React from 'react';
 
 export const initialState = {
   cards: [],
   page: 1,
-  filter: "",
+  filter: '',
   filteredCards: [],
 };
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case "reset":
+    case 'reset':
       return {
         ...state,
         cards: [],
         page: 1,
-        filter: "",
+        filter: '',
         filteredCards: [],
       };
-    case "updateCards":
+    case 'updateCards':
       return { ...state, cards: [...state.cards, ...action.cards] };
-    case "nextPage":
+    case 'nextPage':
       return { ...state, page: state.page + 1 };
-    case "updateFilter":
+    case 'updateFilter':
       return {
         ...state,
         filter: action.filter,
       };
-    case "filterCards":
+    case 'filterCards':
       return {
         ...state,
         filteredCards: action.filteredCards,

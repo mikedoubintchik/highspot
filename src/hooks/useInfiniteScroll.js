@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from "react";
+import { useEffect, useCallback } from 'react';
 
 // infinite scrolling with intersection observer
 const useInfiniteScroll = (scrollRef, dispatch) => {
@@ -6,11 +6,11 @@ const useInfiniteScroll = (scrollRef, dispatch) => {
     (node) => {
       new IntersectionObserver((entries) => {
         entries.forEach((en) => {
-          if (en.intersectionRatio > 0) dispatch({ type: "nextPage" });
+          if (en.intersectionRatio > 0) dispatch({ type: 'nextPage' });
         });
       }).observe(node);
     },
-    [dispatch]
+    [dispatch],
   );
 
   useEffect(() => {

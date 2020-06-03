@@ -35,6 +35,7 @@ yarn build
 
 - I like to be as explicit as possible about required versions and enforce them when possible. Node version 12.18.0 (LTS support) is enforced using .npmrc and engines in package.json
 - I like to enforce code quality so I implemented Husky pre-commit hooks that run tests and prettier on commit and enforce eslint rules
+- I did ignore certain ESLint rules for the sake of simplicity such as not requiring prop types to be specified
 - Any sort of setup requirements are automated as much as possible, so for example I run a post install script that copies the `.env.example` file to `.env`
 
 ### State Management
