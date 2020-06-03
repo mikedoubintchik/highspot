@@ -7,12 +7,18 @@ const SingleCard = ({ card: { name, text, type, imageUrl, set } }) => (
     <CardImg top width="100%" src={imageUrl} alt={name} />
     <div className="text-left">
       <ListGroup flush>
-        <ListGroupItem>{`<strong>Name:</strong> ${name}`}</ListGroupItem>
-        <ListGroupItem>{`<strong>Text:</strong> ${text}`}</ListGroupItem>
         <ListGroupItem>
-          {`<strong>Set Name:</strong> ${set.name}`}
+          <strong>Name:</strong> {name}
         </ListGroupItem>
-        <ListGroupItem>{`<strong>Type:</strong> ${type}`}</ListGroupItem>
+        <ListGroupItem>
+          <strong>Text:</strong> {text}
+        </ListGroupItem>
+        <ListGroupItem>
+          <strong>Set Name:</strong> {set.name}
+        </ListGroupItem>
+        <ListGroupItem>
+          <strong>Type:</strong> {type}
+        </ListGroupItem>
       </ListGroup>
     </div>
   </Card>

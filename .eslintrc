@@ -8,6 +8,7 @@
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": ["error"],
-    "react/prop-types": ["warn"]
+    "react/prop-types": ["warn"],
+    "react/jsx-one-expression-per-line": ["warn"]
   }
 }
