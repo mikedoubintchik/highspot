@@ -55,7 +55,7 @@ const Grid = () => {
 
   return (
     <>
-      <div className="d-flex justify-content-center justify-content-sm-between flex-wrap">
+      <div className="grid d-flex justify-content-center justify-content-sm-between flex-wrap">
         {renderCards(
           store.filteredCards.length > 0 ? store.filteredCards : store.cards,
         )}

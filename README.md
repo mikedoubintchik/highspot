@@ -63,7 +63,8 @@ yarn build
 
 ### Testing
 
-- I wrote a couple of integration and unit tests, but definitely nowhere near production level, due to time constraints. If I was releasing this to production, I would attempt to get close to 100% test coverage and implement regression tests
+- I wrote a few of unit tests for testing rendering, but definitely nowhere near production level, due to time constraints. If I was releasing this to production, I would attempt to get close to 100% test coverage and implement regression tests.
+- The written tests exhibit a simplified usage of mocking
 
 ### Deployment
 
