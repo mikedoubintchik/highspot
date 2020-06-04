@@ -78,3 +78,9 @@ yarn build
 - I would keep in mind accessibility by creating the right html tags, adding labels to the forms fields, making sure you can tab through the whole app, testing with a screen reader, etc.
 - I would create consistency in custom styling rather than using a combination of SCSS files and inline styles
 - I would write this in TypeScript if this was a production project and would grow to be relatively large. This would help with debugging, preventing regressions, and make it easier to code with IDE integrations. This is assuming the team knows TypeScript and/or is interested in learning the business can support the learning curve.
+
+### API Concerns
+
+- The API doesn't seem to be consistently returning results
+- I think it might also be limiting results to 100 total results, because I cannot get past page 5 on infinite scroll
+- Inconsistently it also doesn't let me paginate past page 2 (this happens locally, but not on my hosted version -- some kind of rate limiting maybe)
