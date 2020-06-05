@@ -21,8 +21,9 @@ yarn test
 yarn build
 ```
 
-## Deploy to Firebase
+## Deploy
 
+This runs unit and integration tests, builds prod version, and deploys to firebase. Login credentials for associated firebase account needed.
 `yarn deploy`
 
 ---

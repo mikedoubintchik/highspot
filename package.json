@@ -11,7 +11,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "postinstall": "cp .env.example .env && echo \"REMINDER: Update your .env file\"",
-    "deploy": "yarn build && firebase deploy"
+    "deploy": "yarn test --watchAll=false && yarn build && firebase deploy"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
